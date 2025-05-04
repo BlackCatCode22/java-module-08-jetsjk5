@@ -1,0 +1,5 @@
+@GetMapping
+public ResponseEntity<List<User>> getAllUsers(Pageable pageable) {
+    Page<User> page = userRepository.findAll(pageable);
+    return ResponseEntity.ok(page.getContent());
+}
